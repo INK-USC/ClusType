@@ -2,10 +2,11 @@
 
 ## Publication
 
-* Xiang Ren\*, Ahmed El-Kishky, Chi Wang, Fangbo Tao, Clare R. Voss, Heng Ji, Jiawei Han, "**[ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering](http://web.engr.illinois.edu/~xren7/fp611-ren.pdf)**”, Proc. of 2015 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'15), Sydney, Australia, August 2015.
+* Xiang Ren\*, Ahmed El-Kishky, Chi Wang, Fangbo Tao, Clare R. Voss, Heng Ji, Jiawei Han, "**[ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering](http://web.engr.illinois.edu/~xren7/fp611-ren.pdf)**”, Proc. of 2015 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'15), Sydney, Australia, August 2015. [Slides](http://web.engr.illinois.edu/~xren7/KDD15-ClusType_v1.pdf)
 
 ## Note
-The results on a sample of 50k Yelp reviews are in ./result folder.
+
+"./result" folder contains typed entity mentions on a sample of 50k Yelp reviews.
 
 ## Requirements
 
@@ -44,87 +45,89 @@ $ sudo pip install lxml
 $ ./run.sh  
 ```
 
-## Parameters - run.sh
+## File path setting - run.sh
 
 We will take Yelp dataset as an example.
 
-Input: dataset folder
 ```
 DataPath='data/yelp'
 ```
+Input: dataset folder. There are one sample Yelp review dataset (yelp) and one NYT news dataset (nyt).
 
-Input: data file path
 ```
 RawText='data/yelp/yelp_sample50k.txt'
 ```
+Input data file path.
 
-Input: type mapping file path (type name \tab typeId)
 ```
 TypeFile='data/yelp/type_tid.txt'
 ```
+Input: type mapping file path. Format: "type name \tab typeId". "NIL" means "Not-of-Interest".
 
-Input: stopword list
 ```
 StopwordFile='data/stopwords.txt'
 ```
+Input: stopword list.
 
-Input: Freebase type mapping; please download from [here](https://www.dropbox.com/s/nwwi0ig71fb3w2r/freebase_links.nt?dl=0)
 ```
 FreebaseMapFile='data/freebase_links.nt'
 ```
+Input: Freebase type mapping; please download from [here](https://www.dropbox.com/s/fse5wyjevq8etmo/freebase_links.nt?dl=0). This is used in entity linking module to map entities between DBpedia and Freebase. 
 
-Output: candidate generation output file
 ```
 SegmentOutFile='result/segment.txt'
 ```
+Output: output file from candidate generation. Format: "docId \TAB sentence". Segments are separated by ",". Entity mention candidates are marked with "：EP". Relation phrases are marked with ":RP".
 
-Output: entity linking output file
 ```
 SeedFile='result/seed.txt'
 ```
+Output: entity linking output file. Format: "docId \TAB entity name \TAB Original Freebase Type \TAB Refined Type \TAB Freebase EntityID \TAB Similarity Score \TAB Relative Rank". Seed file for Yelp dataset can be download from [here](https://www.dropbox.com/s/w628rwpb3kbmuea/seed_yelp.txt?dl=0). Seed file for NYT dataset can be downloaded from [here](https://www.dropbox.com/s/k0qzsvbbpngptjt/seed_nyt.txt?dl=0).
 
-Please replace with your own key; Apply from [here](https://code.google.com/apis/console)
-```
-FreebaseKey='AIzaSyBvkZaBXc1GzVs3d0QN2HjTjDZwlgxboW4' 
-```
-
-Threshold on significance score for candidate generation
-```
-significance="1"
-```
-
-Switch on capitalization feature for candidate generation
-```
-capitalize="1"
-```
-
-Maximal phrase length for candidate generation
-```
-maxLength='4'
-```
-
-Minimal support of phrases for candidate generation
-```
-minSup='10'
-```
-
-data statistics on graph construction
 ```
 DataStatsFile='result/data_model_stats.txt'
 ```
+Output: data statistics on graph construction.
 
-number of relation phrase clusters
-```
-NumRelationPhraseClusters='50'
-```
-
-Output: Typed entity mentions
 ```
 ResultFile='result/results.txt'
 ```
+Output: Typed entity mentions. Format: "docId \TAB entity mention \TAB entity type".
 
-
-Output: Typed mentions annotated in segmented text
 ```
 ResultFileInText='result/resultsInText.txt'
 ```
+Output: Typed mentions annotated in the segmented text. 
+
+```
+FreebaseKey='AIzaSyBvkZaBXc1GzVs3d0QN2HjTjDZwlgxboW4' 
+```
+Please replace with your own key; Apply from [here](https://code.google.com/apis/console). Note: the FreebaseAPI is shutting donw. We will update the entity linking module with new API soon.
+
+## Parameters - run.sh
+
+```
+significance="1"
+```
+Threshold on significance score for candidate generation.
+
+```
+capitalize="1"
+```
+Switch on capitalization feature for candidate generation.
+
+```
+maxLength='4'
+```
+Maximal phrase length for candidate generation.
+
+```
+minSup='10'
+```
+Minimal support of phrases for candidate generation.
+
+```
+NumRelationPhraseClusters='50'
+```
+Number of relation phrase clusters.
+
