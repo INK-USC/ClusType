@@ -68,7 +68,7 @@ Input: stopword list
 StopwordFile='data/stopwords.txt'
 ```
 
-Input: Freebase type mapping; please download from [here]()
+Input: Freebase type mapping; please download from [here](https://www.dropbox.com/s/nwwi0ig71fb3w2r/freebase_links.nt?dl=0)
 ```
 FreebaseMapFile='data/freebase_links.nt'
 ```
@@ -83,7 +83,7 @@ Output: entity linking output file
 SeedFile='result/seed.txt'
 ```
 
-Replace with your Freebase API key code; Please got it from [here]()
+Please replace with your own key; Apply from [here](https://code.google.com/apis/console)
 ```
 FreebaseKey='AIzaSyBvkZaBXc1GzVs3d0QN2HjTjDZwlgxboW4' 
 ```
@@ -98,13 +98,12 @@ Switch on capitalization feature for candidate generation
 capitalize="1"
 ```
 
-maximal phrase length for candidate generation
+Maximal phrase length for candidate generation
 ```
 maxLength='4'
-
 ```
 
-minimal support of phrases for candidate generation
+Minimal support of phrases for candidate generation
 ```
 minSup='10'
 ```
