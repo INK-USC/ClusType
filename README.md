@@ -49,85 +49,86 @@ $ ./run.sh
 
 We will take Yelp dataset as an example.
 
+Input: dataset folder. There are one sample Yelp review dataset (yelp) and one NYT news dataset (nyt).
 ```
 DataPath='data/yelp'
 ```
-Input: dataset folder. There are one sample Yelp review dataset (yelp) and one NYT news dataset (nyt).
 
+Input data file path.
 ```
 RawText='data/yelp/yelp_sample50k.txt'
 ```
-Input data file path.
 
+Input: type mapping file path. Format: "type name \tab typeId". "NIL" means "Not-of-Interest".
 ```
 TypeFile='data/yelp/type_tid.txt'
 ```
-Input: type mapping file path. Format: "type name \tab typeId". "NIL" means "Not-of-Interest".
 
+Input: stopword list.
 ```
 StopwordFile='data/stopwords.txt'
 ```
-Input: stopword list.
 
+Input: Freebase type mapping; please download from [here](https://www.dropbox.com/s/fse5wyjevq8etmo/freebase_links.nt?dl=0). This is used in entity linking module to map entities between DBpedia and Freebase. 
 ```
 FreebaseMapFile='data/freebase_links.nt'
 ```
-Input: Freebase type mapping; please download from [here](https://www.dropbox.com/s/fse5wyjevq8etmo/freebase_links.nt?dl=0). This is used in entity linking module to map entities between DBpedia and Freebase. 
 
+Output: output file from candidate generation. Format: "docId \TAB sentence". Segments are separated by ",". Entity mention candidates are marked with "：EP". Relation phrases are marked with ":RP".
 ```
 SegmentOutFile='result/segment.txt'
 ```
-Output: output file from candidate generation. Format: "docId \TAB sentence". Segments are separated by ",". Entity mention candidates are marked with "：EP". Relation phrases are marked with ":RP".
 
+Output: entity linking output file. Format: "docId \TAB entity name \TAB Original Freebase Type \TAB Refined Type \TAB Freebase EntityID \TAB Similarity Score \TAB Relative Rank". Seed file for Yelp dataset can be download from [here](https://www.dropbox.com/s/w628rwpb3kbmuea/seed_yelp.txt?dl=0). Seed file for NYT dataset can be downloaded from [here](https://www.dropbox.com/s/k0qzsvbbpngptjt/seed_nyt.txt?dl=0).
 ```
 SeedFile='result/seed.txt'
 ```
-Output: entity linking output file. Format: "docId \TAB entity name \TAB Original Freebase Type \TAB Refined Type \TAB Freebase EntityID \TAB Similarity Score \TAB Relative Rank". Seed file for Yelp dataset can be download from [here](https://www.dropbox.com/s/w628rwpb3kbmuea/seed_yelp.txt?dl=0). Seed file for NYT dataset can be downloaded from [here](https://www.dropbox.com/s/k0qzsvbbpngptjt/seed_nyt.txt?dl=0).
 
+Output: data statistics on graph construction.
 ```
 DataStatsFile='result/data_model_stats.txt'
 ```
-Output: data statistics on graph construction.
 
+Output: Typed entity mentions. Format: "docId \TAB entity mention \TAB entity type".
 ```
 ResultFile='result/results.txt'
 ```
-Output: Typed entity mentions. Format: "docId \TAB entity mention \TAB entity type".
 
+Output: Typed mentions annotated in the segmented text. 
 ```
 ResultFileInText='result/resultsInText.txt'
 ```
-Output: Typed mentions annotated in the segmented text. 
 
+Please replace with your own key; Apply from [here](https://code.google.com/apis/console). Note: the FreebaseAPI is shutting donw. We will update the entity linking module with new API soon.
 ```
 FreebaseKey='AIzaSyBvkZaBXc1GzVs3d0QN2HjTjDZwlgxboW4' 
 ```
-Please replace with your own key; Apply from [here](https://code.google.com/apis/console). Note: the FreebaseAPI is shutting donw. We will update the entity linking module with new API soon.
 
 ## Parameters - run.sh
 
+Threshold on significance score for candidate generation.
 ```
 significance="1"
 ```
-Threshold on significance score for candidate generation.
 
+Switch on capitalization feature for candidate generation.
 ```
 capitalize="1"
 ```
-Switch on capitalization feature for candidate generation.
 
+Maximal phrase length for candidate generation.
 ```
 maxLength='4'
 ```
-Maximal phrase length for candidate generation.
 
-```
-minSup='10'
 ```
 Minimal support of phrases for candidate generation.
+```
+minSup='10'
 
+Number of relation phrase clusters.
 ```
 NumRelationPhraseClusters='50'
 ```
-Number of relation phrase clusters.
+
 
