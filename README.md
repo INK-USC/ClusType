@@ -42,44 +42,73 @@ $ ./run.sh
 ```
 
 ## Parameters - run.sh
-```
+
 We will take Yelp dataset as an example.
 ```
 DataPath='data/yelp'
+```
+```
 RawText='data/yelp/yelp_sample50k.txt'
+```
+```
 TypeFile='data/yelp/type_tid.txt'
+```
+```
 StopwordFile='data/stopwords.txt'
+```
+```
 FreebaseMapFile='data/freebase_links.nt'
+```
+```
 SegmentOutFile='result/segment.txt'
+```
+```
 SeedFile='result/seed.txt'
+```
+```
 FreebaseKey='AIzaSyBvkZaBXc1GzVs3d0QN2HjTjDZwlgxboW4' # replace with your key
+```
+```
 significance="1"
 ```
 Threshold on significance score for candidate generation
+
 ```
 capitalize="1"
 ```
+
 Switch on capitalization feature for candidate generation
+
 ```
 maxLength='4'
+
 ```
 maximal phrase length for candidate generation
+
 ```
 minSup='10'
 ```
+
 minimal support of phrases for candidate generation
+
 ```
 DataStatsFile='result/data_model_stats.txt'
 ```
+
 data statistics on graph construction
+
 ```
 NumRelationPhraseClusters='50'
 ```
+
 number of relation phrase clusters
+
 ```
 ResultFile='result/results.txt'
 ```
+
 typed entity mentions
+
 ```
 ResultFileInText='result/resultsInText.txt'
 ```
