@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>ClusType by shanzhenren</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">ClusType</h1>
+      <h2 class="project-tagline">Code repository for ClusType software.</h2>
+      <a href="https://github.com/shanzhenren/ClusType" class="btn">View on GitHub</a>
+      <a href="https://github.com/shanzhenren/ClusType/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/shanzhenren/ClusType/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="clustype" class="anchor" href="#clustype" aria-hidden="true"><span class="octicon octicon-link"></span></a>ClusType</h1>
+
+<h2>
+<a id="publication" class="anchor" href="#publication" aria-hidden="true"><span class="octicon octicon-link"></span></a>Publication</h2>
+
+<ul>
+<li>Xiang Ren*, Ahmed El-Kishky, Chi Wang, Fangbo Tao, Clare R. Voss, Heng Ji, Jiawei Han, "<strong><a href="http://web.engr.illinois.edu/%7Exren7/fp611-ren.pdf">ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering</a></strong>”, Proc. of 2015 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'15), Sydney, Australia, August 2015. (<a href="http://web.engr.illinois.edu/%7Exren7/KDD15-ClusType_v1.pdf">Slides</a>)</li>
+</ul>
+
+<h2>
+<a id="note" class="anchor" href="#note" aria-hidden="true"><span class="octicon octicon-link"></span></a>Note</h2>
+
+<p>"./result" folder contains typed entity mentions on a sample of 50k Yelp reviews.</p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p>We will take Ubuntu for example.</p>
+
+<ul>
+<li>python 2.7</li>
+</ul>
+
+<pre><code>$ sudo apt-get install python
+</code></pre>
+
+<ul>
+<li>numpy</li>
+</ul>
+
+<pre><code>$ sudo apt-get install pip
+$ sudo pip install numpy
+</code></pre>
+
+<ul>
+<li>scipy</li>
+</ul>
+
+<pre><code>$ sudo pip install scipy
+</code></pre>
+
+<ul>
+<li>scikit-learn</li>
+</ul>
+
+<pre><code>$ sudo pip install sklearn
+</code></pre>
+
+<ul>
+<li>TextBlob and dowmload training corpora</li>
+</ul>
+
+<pre><code>$ sudo pip install textblob
+$ sudo python -m textblob.download_corpora
+</code></pre>
+
+<ul>
+<li>lxml</li>
+</ul>
+
+<pre><code>$ sudo pip install lxml
+</code></pre>
+
+<h2>
+<a id="default-run" class="anchor" href="#default-run" aria-hidden="true"><span class="octicon octicon-link"></span></a>Default Run</h2>
+
+<pre><code>$ ./run.sh  
+</code></pre>
+
+<h2>
+<a id="file-path-setting---runsh" class="anchor" href="#file-path-setting---runsh" aria-hidden="true"><span class="octicon octicon-link"></span></a>File path setting - run.sh</h2>
+
+<p>We will take Yelp dataset as an example.</p>
+
+<p>Input: dataset folder. There are one sample Yelp review dataset (yelp) and one NYT news dataset (nyt).</p>
+
+<pre><code>DataPath='data/yelp'
+</code></pre>
+
+<p>Input data file path.</p>
+
+<pre><code>RawText='data/yelp/yelp_sample50k.txt'
+</code></pre>
+
+<p>Input: type mapping file path. Format: "type name \tab typeId". "NIL" means "Not-of-Interest".</p>
+
+<pre><code>TypeFile='data/yelp/type_tid.txt'
+</code></pre>
+
+<p>Input: stopword list.</p>
+
+<pre><code>StopwordFile='data/stopwords.txt'
+</code></pre>
+
+<p>Input: Freebase type mapping; please download from <a href="https://www.dropbox.com/s/fse5wyjevq8etmo/freebase_links.nt?dl=0">here</a>. This is used in entity linking module to map entities between DBpedia and Freebase. </p>
+
+<pre><code>FreebaseMapFile='data/freebase_links.nt'
+</code></pre>
+
+<p>Output: output file from candidate generation. Format: "docId \TAB sentence". Segments are separated by ",". Entity mention candidates are marked with "：EP". Relation phrases are marked with ":RP".</p>
+
+<pre><code>SegmentOutFile='result/segment.txt'
+</code></pre>
+
+<p>Output: entity linking output file. Format: "docId \TAB entity name \TAB Original Freebase Type \TAB Refined Type \TAB Freebase EntityID \TAB Similarity Score \TAB Relative Rank". Seed file for Yelp dataset can be download from <a href="https://www.dropbox.com/s/w628rwpb3kbmuea/seed_yelp.txt?dl=0">here</a>. Seed file for NYT dataset can be downloaded from <a href="https://www.dropbox.com/s/k0qzsvbbpngptjt/seed_nyt.txt?dl=0">here</a>.</p>
+
+<pre><code>SeedFile='result/seed.txt'
+</code></pre>
+
+<p>Output: data statistics on graph construction.</p>
+
+<pre><code>DataStatsFile='result/data_model_stats.txt'
+</code></pre>
+
+<p>Output: Typed entity mentions. Format: "docId \TAB entity mention \TAB entity type".</p>
+
+<pre><code>ResultFile='result/results.txt'
+</code></pre>
+
+<p>Output: Typed mentions annotated in the segmented text. </p>
+
+<pre><code>ResultFileInText='result/resultsInText.txt'
+</code></pre>
+
+<p>Please replace with your own key; Apply from <a href="https://code.google.com/apis/console">here</a>. Note: the FreebaseAPI is shutting donw. We will update the entity linking module with new API soon.</p>
+
+<pre><code>FreebaseKey='AIzaSyBvkZaBXc1GzVs3d0QN2HjTjDZwlgxboW4' 
+</code></pre>
+
+<h2>
+<a id="parameters---runsh" class="anchor" href="#parameters---runsh" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameters - run.sh</h2>
+
+<p>Threshold on significance score for candidate generation.</p>
+
+<pre><code>significance="1"
+</code></pre>
+
+<p>Switch on capitalization feature for candidate generation.</p>
+
+<pre><code>capitalize="1"
+</code></pre>
+
+<p>Maximal phrase length for candidate generation.</p>
+
+<pre><code>maxLength='4'
+</code></pre>
+
+<p>Minimal support of phrases for candidate generation.</p>
+
+<pre><code>minSup='10'
+</code></pre>
+
+<p>Number of relation phrase clusters.</p>
+
+<pre><code>NumRelationPhraseClusters='50'
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/shanzhenren/ClusType">ClusType</a> is maintained by <a href="https://github.com/shanzhenren">shanzhenren</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-34679733-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
+
