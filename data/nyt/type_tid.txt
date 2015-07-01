@@ -1,0 +1,5 @@
+/time/event	0
+/location/location	1
+/people/person	2
+/organization/organization	3
+NIL	4

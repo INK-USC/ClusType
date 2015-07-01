@@ -1,0 +1,6 @@
+/time/event	0
+/location/location	1
+/organization/organization	2
+/business/job_title	3
+/food/food	4
+NIL	5

@@ -1,0 +1,6 @@
+CANDIDATE_MINSUP=1, RP_CONTEXT_WINDOW_SIZE=2, K_SM=5
+#mention before filter: 286725, #candidates before filter:63308, #RPs before filter75373
+#mention after filter: 277337, #candidates after filter:63091, candidate avg#mentions4.39582507806, candidate, max# mentions: ive, 2936
+#RPs after filter: 70268
+#edges in W_M: 1684982, total #candidates with no mention graphs:17
+#RP string terms: 20972, #RP context terms:15233
