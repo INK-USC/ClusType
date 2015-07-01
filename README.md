@@ -121,10 +121,10 @@ Maximal phrase length for candidate generation.
 maxLength='4'
 ```
 
-```
 Minimal support of phrases for candidate generation.
 ```
 minSup='10'
+```
 
 Number of relation phrase clusters.
 ```
