@@ -163,8 +163,8 @@ def findingNotableTypes(freebasekey):
 		segments = line.strip('\r\n').split('\t')
 		sim_score = float(segments[3])
 		rank_score = float(segments[4])
-		if sim_score > 0.1 or rank_score == -1: 
-			idToType[segments[2]] = None
+		# if sim_score > 0.1 or rank_score == -1: 
+		idToType[segments[2]] = None
 	print 'Find notable type, total# entities: ', len(idToType)
 	# Get notable type for entities, if don't have notable type, remove it
 	index = 0
