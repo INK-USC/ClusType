@@ -3,10 +3,8 @@ DataPath='data/yelp'
 RawText='data/yelp/yelp_sample50k.txt'
 TypeFile='data/yelp/type_tid.txt'
 StopwordFile='data/stopwords.txt'
-FreebaseMapFile='data/freebase_links.nt'
 SegmentOutFile='result/segment.txt'
 SeedFile='result/seed.txt'
-FreebaseKey='AIzaSyBvkZaBXc1GzVs3d0QN2HjTjDZwlgxboW4' # replace with your key
 significance="1"
 capitalize="1"
 maxLength='4' # maximal phrase length
@@ -39,7 +37,7 @@ cd ..
 ### Entity Linking (DBpeidaSpotlight)
 cd entity_linking
 mkdir tmp
-python EntityLinking.py $RawText $TypeFile $FreebaseMapFile $SeedFile $FreebaseKey
+python EntityLinking.py $RawText $TypeFile $SeedFile
 rm -rf tmp
 cd ..
 

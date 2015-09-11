@@ -69,11 +69,6 @@ Input: stopword list.
 StopwordFile='data/stopwords.txt'
 ```
 
-Input: Freebase type mapping; please download from [here](https://www.dropbox.com/s/fse5wyjevq8etmo/freebase_links.nt?dl=0). This is used in entity linking module to map entities between DBpedia and Freebase. 
-```
-FreebaseMapFile='data/freebase_links.nt'
-```
-
 Output: output file from candidate generation. Format: "docId \TAB sentence". Segments are separated by ",". Entity mention candidates are marked with "：EP". Relation phrases are marked with ":RP".
 ```
 SegmentOutFile='result/segment.txt'
@@ -97,11 +92,6 @@ ResultFile='result/results.txt'
 Output: Typed mentions annotated in the segmented text. 
 ```
 ResultFileInText='result/resultsInText.txt'
-```
-
-Please replace with your own key; Apply from [here](https://code.google.com/apis/console). Note: the FreebaseAPI is shutting donw. We will update the entity linking module with new API soon.
-```
-FreebaseKey='AIzaSyBvkZaBXc1GzVs3d0QN2HjTjDZwlgxboW4' 
 ```
 
 ## Parameters - run.sh

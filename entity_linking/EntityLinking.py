@@ -12,18 +12,8 @@ import operator
 #the set where 
 typeDict = []
 docList = {}
-dbpediaToFreebase = {}
 threadNum = 1
 maxDid = 0
-
-def mapping(mapper):
-    f = open(mapper)
-    for line in f:
-        segments = line.split(' ')
-        dbID = segments[0][29:-1]
-        fbID = segments[2][28:-1]
-        dbpediaToFreebase[dbID] = fbID
-
 
 class myLinker (threading.Thread):
     docList = {}
@@ -57,7 +47,6 @@ class myLinker (threading.Thread):
                         docJson = html.tostring(page)[3:-4]
                         validEntities = extractAnnotations(docJson)
                         for entity in validEntities:
-                            linkToFreebase(entity)
                             types = extractTypes(entity['@types'])
                             typeStr = ''
                             for temp in types:
@@ -137,6 +126,7 @@ def type(typeFile):
     f.close()
     return
 
+
 # extract dbpedia annotations
 def extractAnnotations(docJson):
     validEntities = []
@@ -148,13 +138,7 @@ def extractAnnotations(docJson):
 
     return validEntities
 
-# map dbpedia to freebase
-def linkToFreebase(entity):
-    dbID = entity['@URI'][28:]
-    if dbID in dbpediaToFreebase:
-        entity['@URI'] = dbpediaToFreebase[dbID]
-    else:
-        entity['@URI'] = None
+
 
 # extract types
 def extractTypes(typeStr):
@@ -168,8 +152,6 @@ def extractTypes(typeStr):
 if __name__ == "__main__":
     inFileName='../'+sys.argv[1] # RawText
     typeFile='../'+sys.argv[2]
-    mapFile='../'+sys.argv[3] # ../data/freebase_links.nt
-    outFile='../'+sys.argv[4]
-    mapping(mapFile)
+    outFile='../'+sys.argv[3]
     type(typeFile)
     link(inFileName, outFile, 0.2) # DBpediaSpotlight
