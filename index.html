@@ -5,7 +5,7 @@
     <title>ClusType by shanzhenren</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
@@ -19,11 +19,14 @@
     </section>
 
     <section class="main-content">
-      <h2>
+      <h1>
+<a id="clustype" class="anchor" href="#clustype" aria-hidden="true"><span class="octicon octicon-link"></span></a>ClusType</h1>
+
+<h2>
 <a id="publication" class="anchor" href="#publication" aria-hidden="true"><span class="octicon octicon-link"></span></a>Publication</h2>
 
 <ul>
-<li>Xiang Ren*, Ahmed El-Kishky, Chi Wang, Fangbo Tao, Clare R. Voss, Heng Ji, Jiawei Han, "<strong><a href="http://web.engr.illinois.edu/%7Exren7/fp611-ren.pdf">ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering</a></strong>”, Proc. of 2015 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'15), Sydney, Australia, August 2015. (<a href="http://web.engr.illinois.edu/%7Exren7/KDD15-ClusType_v1.pdf">Slides</a>)</li>
+<li>Xiang Ren*, Ahmed El-Kishky, Chi Wang, Fangbo Tao, Clare R. Voss, Heng Ji, Jiawei Han, "<strong><a href="http://web.engr.illinois.edu/%7Exren7/fp611-ren.pdf">ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering</a></strong>”, Proc. of 2015 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'15), Sydney, Australia, August 2015. (<a href="http://web.engr.illinois.edu/%7Exren7/KDD15-ClusType_v3.pdf">Slides</a>)</li>
 </ul>
 
 <h2>
@@ -111,11 +114,6 @@ $ sudo python -m textblob.download_corpora
 <pre><code>StopwordFile='data/stopwords.txt'
 </code></pre>
 
-<p>Input: Freebase type mapping; please download from <a href="https://www.dropbox.com/s/fse5wyjevq8etmo/freebase_links.nt?dl=0">here</a>. This is used in entity linking module to map entities between DBpedia and Freebase. </p>
-
-<pre><code>FreebaseMapFile='data/freebase_links.nt'
-</code></pre>
-
 <p>Output: output file from candidate generation. Format: "docId \TAB sentence". Segments are separated by ",". Entity mention candidates are marked with "：EP". Relation phrases are marked with ":RP".</p>
 
 <pre><code>SegmentOutFile='result/segment.txt'
@@ -139,11 +137,6 @@ $ sudo python -m textblob.download_corpora
 <p>Output: Typed mentions annotated in the segmented text. </p>
 
 <pre><code>ResultFileInText='result/resultsInText.txt'
-</code></pre>
-
-<p>Please replace with your own key; Apply from <a href="https://code.google.com/apis/console">here</a>. Note: the FreebaseAPI is shutting donw. We will update the entity linking module with new API soon.</p>
-
-<pre><code>FreebaseKey='AIzaSyBvkZaBXc1GzVs3d0QN2HjTjDZwlgxboW4' 
 </code></pre>
 
 <h2>
@@ -195,4 +188,3 @@ $ sudo python -m textblob.download_corpora
 
   </body>
 </html>
-
