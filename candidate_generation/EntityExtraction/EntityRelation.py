@@ -111,7 +111,7 @@ if __name__ == "__main__":
     full_pos_path = sys.argv[4]
     frequent_patterns_path = sys.argv[5]
     significance = sys.argv[6]
-    out_path = sys.argv[7]
+    out_path = "../" + sys.argv[7]
     capitalize = int(sys.argv[8])
     ER = EntityRelation(sentences_path,full_sentence_path,pos_path,full_pos_path,frequent_patterns_path,significance,out_path,capitalize)
     ER.extract()

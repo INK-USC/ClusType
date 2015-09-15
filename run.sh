@@ -27,11 +27,11 @@ full_pos_path="Intermediate/full_pos.txt"
 frequent_patterns_path="Intermediate/frequentPatterns.pickle"
 segmentInput='Intermediate/phrase_segments.txt'
 cd candidate_generation
-rm -rf Intermediate
 mkdir Intermediate
 python DataPreprocessing/Clean.py $RawText 
 python FrequentPhraseMining/FrequentPatternMining.py $segmentInput $maxLength $minSup 
 python EntityExtraction/EntityRelation.py $sentences_path $full_sentence_path $pos_path $full_pos_path $frequent_patterns_path $significance $SegmentOutFile $capitalize
+rm -rf Intermediate
 cd ..
 
 ### Entity Linking (DBpeidaSpotlight)
