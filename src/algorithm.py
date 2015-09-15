@@ -45,6 +45,8 @@ def set_Y(train_mid, seedMention_tid_score, mid_mention, size_row, size_col):
                 # val.append(score)
                 val.append(1.0)
 
+    if num_target < 1:
+        print 'No target type entity seeded!!!!'
 
     ### random sample NIL examples
     # neg_size = num_NIL
@@ -61,7 +63,7 @@ def set_Y(train_mid, seedMention_tid_score, mid_mention, size_row, size_col):
     
     # print Y.nnz, '#ground truth mentions in Y'
     print 'Percent Seeded Mention:', (Y.nnz+0.0)/len(mid_mention) * 100, '% of', len(mid_mention), \
-    ', target/NIL = ', num_target/(Y.nnz-num_target+0.0)
+    ', #target/All = ', num_target/(Y.nnz) * 100
     
     return Y
 
