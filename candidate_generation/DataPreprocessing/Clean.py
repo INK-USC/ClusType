@@ -87,7 +87,7 @@ class Clean:
                         n.write(" ".join(no_stop_pos)+"\n")
 if __name__ == "__main__":
     path = sys.argv[1]
-    C = Clean(path)
+    C = Clean('../' + path)
     print "Start candidate generation..."
     C.clean_and_tag()
 
