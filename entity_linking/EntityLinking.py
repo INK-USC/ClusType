@@ -154,4 +154,4 @@ if __name__ == "__main__":
     typeFile='../'+sys.argv[2]
     outFile='../'+sys.argv[3]
     type(typeFile)
-    link(inFileName, outFile, 0.2) # DBpediaSpotlight
+    link(inFileName, outFile, 0.6) # DBpediaSpotlight; Confidence score = 0.6
