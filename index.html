@@ -26,14 +26,14 @@
 <a id="publication" class="anchor" href="#publication" aria-hidden="true"><span class="octicon octicon-link"></span></a>Publication</h2>
 
 <ul>
-<li><p>Xiang Ren*, Ahmed El-Kishky, Chi Wang, Fangbo Tao, Clare R. Voss, Heng Ji, Jiawei Han, "<strong><a href="http://web.engr.illinois.edu/%7Exren7/fp611-ren.pdf">ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering</a></strong>”, Proc. of 2015 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'15), Sydney, Australia, August 2015. (<a href="http://web.engr.illinois.edu/%7Exren7/KDD15-ClusType_v3.pdf">Slides</a>)</p></li>
-<li><p>Xiang Ren*, Ahmed El-Kishky, Chi Wang, Jiawei Han, "<strong><a href="http://research.microsoft.com/en-us/people/chiw/kdd15tutorial.aspx">Automatic Entity Recognition and Typing from Massive Text Corpora: A Phrase and Network Mining Approach</a></strong>”, Proc. of 2015 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'15 Conference Tutorial), Sydney, Australia, August 2015. (<a href="http://research.microsoft.com/en-us/people/chiw/kdd15tutorial.aspx">Website</a>) (<a href="http://hanj.cs.illinois.edu/kdd-15/UIUC-Tutorial.pdf">Slides</a>)</p></li>
+<li><p><a href="http://web.engr.illinois.edu/%7Exren7/">Xiang Ren</a>*, Ahmed El-Kishky, Chi Wang, Fangbo Tao, Clare R. Voss, Heng Ji, Jiawei Han, "<strong><a href="http://web.engr.illinois.edu/%7Exren7/fp611-ren.pdf">ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering</a></strong>”, Proc. of 2015 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'15), Sydney, Australia, August 2015. (<a href="http://web.engr.illinois.edu/%7Exren7/KDD15-ClusType_v3.pdf">Slides</a>)</p></li>
+<li><p><a href="http://web.engr.illinois.edu/%7Exren7/">Xiang Ren</a>*, Ahmed El-Kishky, Chi Wang, Jiawei Han, "<strong><a href="http://research.microsoft.com/en-us/people/chiw/kdd15tutorial.aspx">Automatic Entity Recognition and Typing from Massive Text Corpora: A Phrase and Network Mining Approach</a></strong>”, Proc. of 2015 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'15 Conference Tutorial), Sydney, Australia, August 2015. (<a href="http://research.microsoft.com/en-us/people/chiw/kdd15tutorial.aspx">Website</a>) (<a href="http://hanj.cs.illinois.edu/kdd-15/UIUC-Tutorial.pdf">Slides</a>)</p></li>
 </ul>
 
 <h2>
 <a id="note" class="anchor" href="#note" aria-hidden="true"><span class="octicon octicon-link"></span></a>Note</h2>
 
-<p>"./result" folder contains typed entity mentions on a sample of 50k Yelp reviews.</p>
+<p>"./result" folder contains results on a sample of 50k Yelp reviews.</p>
 
 <h2>
 <a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
@@ -108,7 +108,7 @@ $ sudo python -m textblob.download_corpora
 <p>Input: type mapping file path.</p>
 
 <ul>
-<li>Format: "type name \tab typeId". "NIL" means "Not-of-Interest".</li>
+<li>Format: "type name \TAB typeId \n". "NIL" means "Not-of-Interest".</li>
 </ul>
 
 <pre><code>TypeFile='data/yelp/type_tid.txt'
@@ -122,7 +122,8 @@ $ sudo python -m textblob.download_corpora
 <p>Output: output file from candidate generation.</p>
 
 <ul>
-<li>Format: "docId \TAB segmented sentence". Segments are separated by ",". Entity mention candidates are marked with ":EP". Relation phrases are marked with ":RP".</li>
+<li>Format: "docId \TAB segmented sentence \n".</li>
+<li>Segments are separated by ",". Entity mention candidates are marked with ":EP". Relation phrases are marked with ":RP".</li>
 </ul>
 
 <pre><code>SegmentOutFile='result/segment.txt'
@@ -131,12 +132,12 @@ $ sudo python -m textblob.download_corpora
 <p>Output: entity linking output file.</p>
 
 <ul>
-<li>Format: "docId \TAB entity name \TAB Original Freebase Type \TAB Refined Type \TAB Freebase EntityID \TAB Similarity Score \TAB Relative Rank". </li>
-<li>Seed file for Yelp dataset can be download from <a href="https://www.dropbox.com/s/w628rwpb3kbmuea/seed_yelp.txt?dl=0">here</a>. </li>
-<li>Seed file for NYT dataset can be downloaded from <a href="https://www.dropbox.com/s/k0qzsvbbpngptjt/seed_nyt.txt?dl=0">here</a>.</li>
+<li>Format: "docId \TAB entity name \TAB Original Freebase Type \TAB Refined Type \TAB Freebase EntityID \TAB Similarity Score \TAB Relative Rank \n". </li>
+<li>Download <a href="https://www.dropbox.com/s/w628rwpb3kbmuea/seed_yelp.txt?dl=0">Seed file</a> for Yelp dataset. </li>
+<li>Download <a href="https://www.dropbox.com/s/k0qzsvbbpngptjt/seed_nyt.txt?dl=0">Seed file</a> for NYT dataset.</li>
 </ul>
 
-<p>NOTE: Our entity linking module calls <a href="https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Web-service">DBpediaSpotLight Web service</a>, which has limited querying speed. This process can be largely accelarated by installing the tool on your local machine. See <a href="https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Installation">here</a> for details.</p>
+<p>NOTE: Our entity linking module calls <a href="https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Web-service">DBpediaSpotLight Web service</a>, which has limited querying speed. This process can be largely accelarated by installing the tool on your local machine <a href="https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Installation">Link</a>.</p>
 
 <pre><code>SeedFile='result/seed.txt'
 </code></pre>
@@ -149,7 +150,7 @@ $ sudo python -m textblob.download_corpora
 <p>Output: Typed entity mentions.</p>
 
 <ul>
-<li>Format: "docId \TAB entity mention \TAB entity type".</li>
+<li>Format: "docId \TAB entity mention \TAB entity type \n".</li>
 </ul>
 
 <pre><code>ResultFile='result/results.txt'
