@@ -2,13 +2,13 @@
 
 ## Publication
 
-* Xiang Ren\*, Ahmed El-Kishky, Chi Wang, Fangbo Tao, Clare R. Voss, Heng Ji, Jiawei Han, "**[ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering](http://web.engr.illinois.edu/~xren7/fp611-ren.pdf)**”, Proc. of 2015 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'15), Sydney, Australia, August 2015. ([Slides](http://web.engr.illinois.edu/~xren7/KDD15-ClusType_v3.pdf))
+* [Xiang Ren](http://web.engr.illinois.edu/~xren7/)\*, Ahmed El-Kishky, Chi Wang, Fangbo Tao, Clare R. Voss, Heng Ji, Jiawei Han, "**[ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering](http://web.engr.illinois.edu/~xren7/fp611-ren.pdf)**”, Proc. of 2015 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'15), Sydney, Australia, August 2015. ([Slides](http://web.engr.illinois.edu/~xren7/KDD15-ClusType_v3.pdf))
 
-* Xiang Ren\*, Ahmed El-Kishky, Chi Wang, Jiawei Han, "**[Automatic Entity Recognition and Typing from Massive Text Corpora: A Phrase and Network Mining Approach](http://research.microsoft.com/en-us/people/chiw/kdd15tutorial.aspx)**”, Proc. of 2015 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'15 Conference Tutorial), Sydney, Australia, August 2015. ([Website](http://research.microsoft.com/en-us/people/chiw/kdd15tutorial.aspx)) ([Slides](http://hanj.cs.illinois.edu/kdd-15/UIUC-Tutorial.pdf))
+* [Xiang Ren](http://web.engr.illinois.edu/~xren7/)\*, Ahmed El-Kishky, Chi Wang, Jiawei Han, "**[Automatic Entity Recognition and Typing from Massive Text Corpora: A Phrase and Network Mining Approach](http://research.microsoft.com/en-us/people/chiw/kdd15tutorial.aspx)**”, Proc. of 2015 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'15 Conference Tutorial), Sydney, Australia, August 2015. ([Website](http://research.microsoft.com/en-us/people/chiw/kdd15tutorial.aspx)) ([Slides](http://hanj.cs.illinois.edu/kdd-15/UIUC-Tutorial.pdf))
 
 ## Note
 
-"./result" folder contains typed entity mentions on a sample of 50k Yelp reviews.
+"./result" folder contains results on a sample of 50k Yelp reviews.
 
 ## Requirements
 
@@ -62,7 +62,7 @@ RawText='data/yelp/yelp_sample50k.txt'
 ```
 
 Input: type mapping file path.
-- Format: "type name \tab typeId". "NIL" means "Not-of-Interest".
+- Format: "type name \TAB typeId \n". "NIL" means "Not-of-Interest".
 ```
 TypeFile='data/yelp/type_tid.txt'
 ```
@@ -73,17 +73,18 @@ StopwordFile='data/stopwords.txt'
 ```
 
 Output: output file from candidate generation.
-- Format: "docId \TAB segmented sentence". Segments are separated by ",". Entity mention candidates are marked with ":EP". Relation phrases are marked with ":RP".
+- Format: "docId \TAB segmented sentence \n".
+- Segments are separated by ",". Entity mention candidates are marked with ":EP". Relation phrases are marked with ":RP".
 ```
 SegmentOutFile='result/segment.txt'
 ```
 
 Output: entity linking output file.
-- Format: "docId \TAB entity name \TAB Original Freebase Type \TAB Refined Type \TAB Freebase EntityID \TAB Similarity Score \TAB Relative Rank". 
-- Seed file for Yelp dataset can be download from [here](https://www.dropbox.com/s/w628rwpb3kbmuea/seed_yelp.txt?dl=0). 
-- Seed file for NYT dataset can be downloaded from [here](https://www.dropbox.com/s/k0qzsvbbpngptjt/seed_nyt.txt?dl=0).
+- Format: "docId \TAB entity name \TAB Original Freebase Type \TAB Refined Type \TAB Freebase EntityID \TAB Similarity Score \TAB Relative Rank \n". 
+- Download [Seed file](https://www.dropbox.com/s/w628rwpb3kbmuea/seed_yelp.txt?dl=0) for Yelp dataset. 
+- Download [Seed file](https://www.dropbox.com/s/k0qzsvbbpngptjt/seed_nyt.txt?dl=0) for NYT dataset.
 
-NOTE: Our entity linking module calls [DBpediaSpotLight Web service](https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Web-service), which has limited querying speed. This process can be largely accelarated by installing the tool on your local machine. See [here](https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Installation) for details.
+NOTE: Our entity linking module calls [DBpediaSpotLight Web service](https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Web-service), which has limited querying speed. This process can be largely accelarated by installing the tool on your local machine [Link](https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Installation).
 ```
 SeedFile='result/seed.txt'
 ```
@@ -94,7 +95,7 @@ DataStatsFile='result/data_model_stats.txt'
 ```
 
 Output: Typed entity mentions.
-- Format: "docId \TAB entity mention \TAB entity type".
+- Format: "docId \TAB entity mention \TAB entity type \n".
 ```
 ResultFile='result/results.txt'
 ```
@@ -130,5 +131,3 @@ Number of relation phrase clusters.
 ```
 NumRelationPhraseClusters='50'
 ```
-
-
