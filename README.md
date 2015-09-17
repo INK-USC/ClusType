@@ -31,7 +31,7 @@ $ sudo pip install scipy
 ```
 $ sudo pip install sklearn
 ```
-* TextBlob and dowmload training corpora
+* TextBlob and data for its POS tagger
 ```
 $ sudo pip install textblob
 $ sudo python -m textblob.download_corpora
@@ -61,7 +61,8 @@ Input data file path.
 RawText='data/yelp/yelp_sample50k.txt'
 ```
 
-Input: type mapping file path. Format: "type name \tab typeId". "NIL" means "Not-of-Interest".
+Input: type mapping file path.
+- Format: "type name \tab typeId". "NIL" means "Not-of-Interest".
 ```
 TypeFile='data/yelp/type_tid.txt'
 ```
@@ -71,7 +72,8 @@ Input: stopword list.
 StopwordFile='data/stopwords.txt'
 ```
 
-Output: output file from candidate generation. Format: "docId \TAB sentence". Segments are separated by ",". Entity mention candidates are marked with "：EP". Relation phrases are marked with ":RP".
+Output: output file from candidate generation.
+- Format: "docId \TAB segmented sentence". Segments are separated by ",". Entity mention candidates are marked with ":EP". Relation phrases are marked with ":RP".
 ```
 SegmentOutFile='result/segment.txt'
 ```
@@ -81,7 +83,7 @@ Output: entity linking output file.
 - Seed file for Yelp dataset can be download from [here](https://www.dropbox.com/s/w628rwpb3kbmuea/seed_yelp.txt?dl=0). 
 - Seed file for NYT dataset can be downloaded from [here](https://www.dropbox.com/s/k0qzsvbbpngptjt/seed_nyt.txt?dl=0).
 
-NOTE: Our entity linking module calls [DBpediaSpotLight Web service](https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Web-service), which has limited querying speed. You can setup your local machine by referring to [here](https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Installation). 
+NOTE: Our entity linking module calls [DBpediaSpotLight Web service](https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Web-service), which has limited querying speed. This process can be largely accelarated by installing the tool on your local machine. See [here](https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Installation) for details.
 ```
 SeedFile='result/seed.txt'
 ```
@@ -91,7 +93,8 @@ Output: data statistics on graph construction.
 DataStatsFile='result/data_model_stats.txt'
 ```
 
-Output: Typed entity mentions. Format: "docId \TAB entity mention \TAB entity type".
+Output: Typed entity mentions.
+- Format: "docId \TAB entity mention \TAB entity type".
 ```
 ResultFile='result/results.txt'
 ```
