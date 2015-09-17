@@ -76,7 +76,13 @@ Output: output file from candidate generation. Format: "docId \TAB sentence". Se
 SegmentOutFile='result/segment.txt'
 ```
 
-Output: entity linking output file. Format: "docId \TAB entity name \TAB Original Freebase Type \TAB Refined Type \TAB Freebase EntityID \TAB Similarity Score \TAB Relative Rank". Seed file for Yelp dataset can be download from [here](https://www.dropbox.com/s/w628rwpb3kbmuea/seed_yelp.txt?dl=0). Seed file for NYT dataset can be downloaded from [here](https://www.dropbox.com/s/k0qzsvbbpngptjt/seed_nyt.txt?dl=0).
+Output: entity linking output file. 
+	- Format: "docId \TAB entity name \TAB Original Freebase Type \TAB Refined Type \TAB Freebase EntityID \TAB Similarity Score \TAB Relative Rank". 
+
+	- Seed file for Yelp dataset can be download from [here](https://www.dropbox.com/s/w628rwpb3kbmuea/seed_yelp.txt?dl=0). 
+	- Seed file for NYT dataset can be downloaded from [here](https://www.dropbox.com/s/k0qzsvbbpngptjt/seed_nyt.txt?dl=0).
+
+NOTE: Our entity linking module calls [DBpediaSpotLight Web service](https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Web-service), which has limited querying speed. You can setup your local machine by referring to [here](https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Installation). 
 ```
 SeedFile='result/seed.txt'
 ```
