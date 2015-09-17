@@ -70,7 +70,7 @@ $ sudo pip install numpy
 </code></pre>
 
 <ul>
-<li>TextBlob and dowmload training corpora</li>
+<li>TextBlob and data for its POS tagger</li>
 </ul>
 
 <pre><code>$ sudo pip install textblob
@@ -105,7 +105,11 @@ $ sudo python -m textblob.download_corpora
 <pre><code>RawText='data/yelp/yelp_sample50k.txt'
 </code></pre>
 
-<p>Input: type mapping file path. Format: "type name \tab typeId". "NIL" means "Not-of-Interest".</p>
+<p>Input: type mapping file path.</p>
+
+<ul>
+<li>Format: "type name \tab typeId". "NIL" means "Not-of-Interest".</li>
+</ul>
 
 <pre><code>TypeFile='data/yelp/type_tid.txt'
 </code></pre>
@@ -115,12 +119,24 @@ $ sudo python -m textblob.download_corpora
 <pre><code>StopwordFile='data/stopwords.txt'
 </code></pre>
 
-<p>Output: output file from candidate generation. Format: "docId \TAB sentence". Segments are separated by ",". Entity mention candidates are marked with "：EP". Relation phrases are marked with ":RP".</p>
+<p>Output: output file from candidate generation.</p>
+
+<ul>
+<li>Format: "docId \TAB segmented sentence". Segments are separated by ",". Entity mention candidates are marked with ":EP". Relation phrases are marked with ":RP".</li>
+</ul>
 
 <pre><code>SegmentOutFile='result/segment.txt'
 </code></pre>
 
-<p>Output: entity linking output file. Format: "docId \TAB entity name \TAB Original Freebase Type \TAB Refined Type \TAB Freebase EntityID \TAB Similarity Score \TAB Relative Rank". Seed file for Yelp dataset can be download from <a href="https://www.dropbox.com/s/w628rwpb3kbmuea/seed_yelp.txt?dl=0">here</a>. Seed file for NYT dataset can be downloaded from <a href="https://www.dropbox.com/s/k0qzsvbbpngptjt/seed_nyt.txt?dl=0">here</a>.</p>
+<p>Output: entity linking output file.</p>
+
+<ul>
+<li>Format: "docId \TAB entity name \TAB Original Freebase Type \TAB Refined Type \TAB Freebase EntityID \TAB Similarity Score \TAB Relative Rank". </li>
+<li>Seed file for Yelp dataset can be download from <a href="https://www.dropbox.com/s/w628rwpb3kbmuea/seed_yelp.txt?dl=0">here</a>. </li>
+<li>Seed file for NYT dataset can be downloaded from <a href="https://www.dropbox.com/s/k0qzsvbbpngptjt/seed_nyt.txt?dl=0">here</a>.</li>
+</ul>
+
+<p>NOTE: Our entity linking module calls <a href="https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Web-service">DBpediaSpotLight Web service</a>, which has limited querying speed. This process can be largely accelarated by installing the tool on your local machine. See <a href="https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Installation">here</a> for details.</p>
 
 <pre><code>SeedFile='result/seed.txt'
 </code></pre>
@@ -130,7 +146,11 @@ $ sudo python -m textblob.download_corpora
 <pre><code>DataStatsFile='result/data_model_stats.txt'
 </code></pre>
 
-<p>Output: Typed entity mentions. Format: "docId \TAB entity mention \TAB entity type".</p>
+<p>Output: Typed entity mentions.</p>
+
+<ul>
+<li>Format: "docId \TAB entity mention \TAB entity type".</li>
+</ul>
 
 <pre><code>ResultFile='result/results.txt'
 </code></pre>
