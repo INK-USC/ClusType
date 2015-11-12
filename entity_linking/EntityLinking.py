@@ -6,13 +6,14 @@ import json
 import threading
 import sys, traceback
 import operator
+import math
 
 
 """Entity Linker for a set of documents"""
 #the set where 
 typeDict = []
 docList = {}
-threadNum = 1
+threadNum = 4
 maxDid = 0
 
 class myLinker (threading.Thread):
@@ -24,10 +25,13 @@ class myLinker (threading.Thread):
         self.docList = docList
         self.offset = offset
         self.confidence = confidence
+        self.docLen = len(docList)
+
     def run(self):
         print "Start DBpediaSpotlight"
         g = open('tmp/temp' + str(self.offset) + '.txt', 'w')
         index = 0
+        blockSize =  math.floor(self.docLen/10.0);
         while 1:
             did = str(index + self.offset)
             if int(did) <= maxDid:
@@ -42,7 +46,7 @@ class myLinker (threading.Thread):
                         data = urllib.urlencode(data)
                         req = urllib2.Request(url)
                         req.add_header('Accept', 'application/json') #text/xml')
-                        print did
+                        print(did),
                         page = html.fromstring(urllib2.urlopen(req, data, timeout=100).read())
                         docJson = html.tostring(page)[3:-4]
                         validEntities = extractAnnotations(docJson)
@@ -59,7 +63,7 @@ class myLinker (threading.Thread):
                         index += threadNum
                     except:
                         index += threadNum
-                        print 'noresult'
+                        # print 'noresult'
                 else:
                     index += threadNum
                     continue
