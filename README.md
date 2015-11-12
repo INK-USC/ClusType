@@ -57,6 +57,7 @@ DataPath='data/yelp'
 ```
 
 Input data file path.
+- Format: "docId \TAB document \n".
 ```
 RawText='data/yelp/yelp_sample50k.txt'
 ```
