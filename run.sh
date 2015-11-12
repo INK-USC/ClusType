@@ -28,6 +28,7 @@ frequent_patterns_path="Intermediate/frequentPatterns.pickle"
 segmentInput='Intermediate/phrase_segments.txt'
 cd candidate_generation
 mkdir Intermediate
+python DataPreprocessing/Reformat.py $RawText 
 python DataPreprocessing/Clean.py $RawText 
 python FrequentPhraseMining/FrequentPatternMining.py $segmentInput $maxLength $minSup 
 python EntityExtraction/EntityRelation.py $sentences_path $full_sentence_path $pos_path $full_pos_path $frequent_patterns_path $significance $SegmentOutFile $capitalize
