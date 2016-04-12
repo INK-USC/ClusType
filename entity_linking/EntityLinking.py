@@ -38,7 +38,7 @@ class myLinker (threading.Thread):
                 if did in self.docList:
                     try:
                         doc = self.docList[did]
-                        url = "http://spotlight.dbpedia.org/rest/annotate"
+                        url = "http://spotlight.sztaki.hu:2222/rest/annotate"
                         #url = "http://localhost:2222/rest/annotate"
                         data = {"confidence":self.confidence}
                         data["support"] = "20"
