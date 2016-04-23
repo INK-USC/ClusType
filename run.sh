@@ -28,21 +28,21 @@ pos_path="Intermediate/pos.txt"
 full_pos_path="Intermediate/full_pos.txt"
 frequent_patterns_path="Intermediate/frequentPatterns.pickle"
 segmentInput='Intermediate/phrase_segments.txt'
-# cd candidate_generation
-# rm -rf Intermediate
-# mkdir Intermediate
-# python DataPreprocessing/Clean.py $RawText 
-# python FrequentPhraseMining/FrequentPatternMining.py $segmentInput $maxLength $minSup 
-# python EntityExtraction/EntityRelation.py $sentences_path $full_sentence_path $pos_path $full_pos_path $frequent_patterns_path $significance $SegmentOutFile $capitalize
-# cd ..
+cd candidate_generation
+rm -rf Intermediate
+mkdir Intermediate
+python DataPreprocessing/Clean.py $RawText 
+python FrequentPhraseMining/FrequentPatternMining.py $segmentInput $maxLength $minSup 
+python EntityExtraction/EntityRelation.py $sentences_path $full_sentence_path $pos_path $full_pos_path $frequent_patterns_path $significance $SegmentOutFile $capitalize
+cd ..
 
 ### Entity Linking (DBpeidaSpotlight)
 cd entity_linking
 mkdir tmp
 python EntityLinking.py $RawText $TypeFile $FreebaseMap $SeedFile $FreebaseKey
-#rm -rf tmp
-#cd ..
+rm -rf tmp
+cd ..
 
 ### ClusType
-# python src/step0-graph_construction.py $SegmentOutFile $StopwordFile $DataStatsFile
-# python src/step1-entity_recognition.py $SegmentOutFile $SeedFile $TypeFile $NumRelationPhraseClusters $ResultFile $ResultFileInText
+python src/step0-graph_construction.py $SegmentOutFile $StopwordFile $DataStatsFile
+python src/step1-entity_recognition.py $SegmentOutFile $SeedFile $TypeFile $NumRelationPhraseClusters $ResultFile $ResultFileInText
