@@ -20,10 +20,10 @@
 
     <section class="main-content">
       <h1>
-<a id="clustype" class="anchor" href="#clustype" aria-hidden="true"><span class="octicon octicon-link"></span></a>ClusType</h1>
+<a id="clustype" class="anchor" href="#clustype" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ClusType</h1>
 
 <h2>
-<a id="publication" class="anchor" href="#publication" aria-hidden="true"><span class="octicon octicon-link"></span></a>Publication</h2>
+<a id="publication" class="anchor" href="#publication" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Publication</h2>
 
 <ul>
 <li><p><a href="http://web.engr.illinois.edu/%7Exren7/">Xiang Ren</a>*, Ahmed El-Kishky, Chi Wang, Fangbo Tao, Clare R. Voss, Heng Ji, Jiawei Han, "<strong><a href="http://web.engr.illinois.edu/%7Exren7/fp611-ren.pdf">ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering</a></strong>”, Proc. of 2015 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'15), Sydney, Australia, August 2015. (<a href="http://web.engr.illinois.edu/%7Exren7/KDD15-ClusType_v3.pdf">Slides</a>)</p></li>
@@ -31,12 +31,12 @@
 </ul>
 
 <h2>
-<a id="note" class="anchor" href="#note" aria-hidden="true"><span class="octicon octicon-link"></span></a>Note</h2>
+<a id="note" class="anchor" href="#note" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Note</h2>
 
 <p>"./result" folder contains results on a sample of 50k Yelp reviews.</p>
 
 <h2>
-<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
 
 <p>We will take Ubuntu for example.</p>
 
@@ -85,13 +85,13 @@ $ sudo python -m textblob.download_corpora
 </code></pre>
 
 <h2>
-<a id="default-run" class="anchor" href="#default-run" aria-hidden="true"><span class="octicon octicon-link"></span></a>Default Run</h2>
+<a id="default-run" class="anchor" href="#default-run" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default Run</h2>
 
 <pre><code>$ ./run.sh  
 </code></pre>
 
 <h2>
-<a id="file-path-setting---runsh" class="anchor" href="#file-path-setting---runsh" aria-hidden="true"><span class="octicon octicon-link"></span></a>File path setting - run.sh</h2>
+<a id="file-path-setting---runsh" class="anchor" href="#file-path-setting---runsh" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>File path setting - run.sh</h2>
 
 <p>We will take Yelp dataset as an example.</p>
 
@@ -101,6 +101,10 @@ $ sudo python -m textblob.download_corpora
 </code></pre>
 
 <p>Input data file path.</p>
+
+<ul>
+<li>Format: "docId \TAB document \n".</li>
+</ul>
 
 <pre><code>RawText='data/yelp/yelp_sample50k.txt'
 </code></pre>
@@ -112,6 +116,11 @@ $ sudo python -m textblob.download_corpora
 </ul>
 
 <pre><code>TypeFile='data/yelp/type_tid.txt'
+</code></pre>
+
+<p>Input: Download <a href="https://drive.google.com/open?id=0Bw2KHcvHhx-gQ2RJVVJLSHJGYlk">Freebase-to-DBpedia mapping file</a>. Place it under "/entity_linking/" directory</p>
+
+<pre><code>'entity_linking/freebase_links.nt'
 </code></pre>
 
 <p>Input: stopword list.</p>
@@ -162,7 +171,7 @@ $ sudo python -m textblob.download_corpora
 </code></pre>
 
 <h2>
-<a id="parameters---runsh" class="anchor" href="#parameters---runsh" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameters - run.sh</h2>
+<a id="parameters---runsh" class="anchor" href="#parameters---runsh" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parameters - run.sh</h2>
 
 <p>Threshold on significance score for candidate generation.</p>
 
