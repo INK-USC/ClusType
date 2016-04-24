@@ -68,9 +68,9 @@ Input: type mapping file path.
 TypeFile='data/yelp/type_tid.txt'
 ```
 
-Input: Download [Freebase-to-DBpedia mapping file](https://drive.google.com/open?id=0Bw2KHcvHhx-gQ2RJVVJLSHJGYlk). Place it under "/entity_linking/" directory
+Input: Download [Freebase-to-DBpedia mapping file](https://drive.google.com/open?id=0Bw2KHcvHhx-gQ2RJVVJLSHJGYlk). Place it under "data/" directory
 ```
-'entity_linking/freebase_links.nt'
+FreebaseMap='data/freebase_links.nt'
 ```
 
 Input: stopword list.

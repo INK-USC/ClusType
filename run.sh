@@ -1,6 +1,6 @@
 #!/bin/sh
 DataPath='data/yelp'
-RawText='data/yelp/yelp_sample10.txt'
+RawText='data/yelp/yelp_sample50.txt'
 TypeFile='data/yelp/type_tid.txt'
 StopwordFile='data/stopwords.txt'
 FreebaseMap='data/freebase_links.nt'
