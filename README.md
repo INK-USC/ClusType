@@ -1,19 +1,21 @@
 # ClusType
 
-Source code for SIGKDD'15 paper *[ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering](http://web.engr.illinois.edu/~xren7/fp611-ren.pdf)* ([Slides](http://web.engr.illinois.edu/~xren7/KDD15-ClusType_v3.pdf))
+Source code for SIGKDD'15 paper *[ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering](http://web.engr.illinois.edu/~xren7/fp611-ren.pdf)* ([Slides](http://web.engr.illinois.edu/~xren7/KDD15-ClusType_v3.pdf)). 
+
+Given a *text corpus* (e.g., a collection of news articles), it performs automatically [entity extraction and typing]() using [distant supervision](http://deepdive.stanford.edu/distant_supervision) (i.e., examples from external knowledge bases like Freebase). For example, from the sentence "`The best BBQ I’ve tasted in Phoenix `" the system will recognize `BBQ` as *food* and `phoenix` as *location*. More background can be found in our [WWW'16 tutorial](http://web.engr.illinois.edu/~elkishk2/www2016/).
 
 
 ## Data
 
 - NYT:
   - Corpus: 110k New York Times news articles ([download](https://www.dropbox.com/s/y20wv7xmfgcjx65/nyt13_110k.txt?dl=0))
-  - Seed file: entity linking result ([download](https://www.dropbox.com/s/n46gr1aented5n1/gt_nyt.txt?dl=0))  
+  - Seed entities: entity linking result by DBpediaSpotlight ([download](https://www.dropbox.com/s/n46gr1aented5n1/gt_nyt.txt?dl=0))  
 - Yelp:
   - Corpus: 230k Yelp reviews sampled from [Yelp Dataset](https://www.yelp.com/dataset_challenge) ([download](https://www.dropbox.com/s/nqouxgqmz2fdemy/yelp_230k.txt?dl=0))
-  - Seed file: entity linking result ([download](https://www.dropbox.com/s/w628rwpb3kbmuea/seed_yelp.txt?dl=0))
+  - Seed entities: entity linking result by DBpediaSpotlight ([download](https://www.dropbox.com/s/w628rwpb3kbmuea/seed_yelp.txt?dl=0))
 - Tweet:
   - Corpus: 302k tweets from May 2011 ([download](https://www.dropbox.com/s/tlf4qi5siqka14n/tweet_302k.txt?dl=0))
-  - Seed file: entity linking result ([download](https://www.dropbox.com/s/c1yuqy3fakga015/tweet_seed.txt?dl=0))
+  - Seed entities: entity linking result by DBpediaSpotlight ([download](https://www.dropbox.com/s/c1yuqy3fakga015/tweet_seed.txt?dl=0))
 
 
 ## System example output
