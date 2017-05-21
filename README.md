@@ -1,44 +1,14 @@
 # ClusType
 
-## Publication
+Source code for SIGKDD'15 paper *[ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering](http://web.engr.illinois.edu/~xren7/fp611-ren.pdf)* ([Slides](http://web.engr.illinois.edu/~xren7/KDD15-ClusType_v3.pdf))
 
-* [Xiang Ren](http://web.engr.illinois.edu/~xren7/)\*, Ahmed El-Kishky, Chi Wang, Fangbo Tao, Clare R. Voss, Heng Ji, Jiawei Han, "**[ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering](http://web.engr.illinois.edu/~xren7/fp611-ren.pdf)**”, Proc. of 2015 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'15), Sydney, Australia, August 2015. ([Slides](http://web.engr.illinois.edu/~xren7/KDD15-ClusType_v3.pdf))
-
-* [Xiang Ren](http://web.engr.illinois.edu/~xren7/)\*, Ahmed El-Kishky, Chi Wang, Jiawei Han, "**[Automatic Entity Recognition and Typing from Massive Text Corpora: A Phrase and Network Mining Approach](http://research.microsoft.com/en-us/people/chiw/kdd15tutorial.aspx)**”, Proc. of 2015 ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining (KDD'15 Conference Tutorial), Sydney, Australia, August 2015. ([Website](http://research.microsoft.com/en-us/people/chiw/kdd15tutorial.aspx)) ([Slides](http://hanj.cs.illinois.edu/kdd-15/UIUC-Tutorial.pdf))
-
-## Note
-
-"./result" folder contains results on a sample of 50k Yelp reviews.
-
-## Requirements
-
-We will take Ubuntu for example.
+## Dependencies
 
 * python 2.7
+* numpy, scipy, scikit-learn, lxml, TextBlob and related corpora
 ```
-$ sudo apt-get install python
-```
-* numpy
-```
-$ sudo apt-get install pip
-$ sudo pip install numpy
-```
-* scipy
-```
-$ sudo pip install scipy
-```
-* scikit-learn
-```
-$ sudo pip install sklearn
-```
-* TextBlob and data for its POS tagger
-```
-$ sudo pip install textblob
+$ sudo pip install numpy scipy sklearn lxml textblob
 $ sudo python -m textblob.download_corpora
-```
-* lxml
-```
-$ sudo pip install lxml
 ```
 
 ## Default Run
@@ -136,4 +106,18 @@ minSup='10'
 Number of relation phrase clusters.
 ```
 NumRelationPhraseClusters='50'
+```
+
+
+## Reference
+
+```
+@inproceedings{ren2015clustype,
+  title={Clustype: Effective entity recognition and typing by relation phrase-based clustering},
+  author={Ren, Xiang and El-Kishky, Ahmed and Wang, Chi and Tao, Fangbo and Voss, Clare R and Han, Jiawei},
+  booktitle={Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  pages={995--1004},
+  year={2015},
+  organization={ACM}
+}
 ```
