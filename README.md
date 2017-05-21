@@ -18,7 +18,7 @@ Given a *text corpus* (e.g., a collection of news articles), it performs automat
   - Seed entities: entity linking result by DBpediaSpotlight ([download](https://www.dropbox.com/s/c1yuqy3fakga015/tweet_seed.txt?dl=0))
 
 
-## System example output
+## System output
 
 The system output on NYT dataset can be downloaded from [here](https://www.dropbox.com/s/s1cqym4qmub3jkt/results.txt?dl=0). We evaluated the result over ~1k (20,874 annotated entity mentions) [gold standard set](https://www.dropbox.com/s/n46gr1aented5n1/gt_nyt.txt?dl=0).
 
@@ -108,7 +108,7 @@ maxLength='4'
 
 Minimal support of phrases for candidate generation.
 ```
-minSup='10'
+minSup='20'
 ```
 
 Number of relation phrase clusters.
