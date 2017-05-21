@@ -11,26 +11,26 @@ ResultFileInText=$ResultPath'/resultsInText.txt' # typed mentions annotated in s
 significance="2"
 capitalize="1"
 maxLength='4' # maximal phrase length
-minSup='20' # minimal support for phrases in candidate generationSegmentOutFile='result/yelp/segment.txt'
+minSup='30' # minimal support for phrases in candidate generationSegmentOutFile='result/yelp/segment.txt'
 NumRelationPhraseClusters='500' # number of relation phrase clusters
 
 
 
 ### Candidate Generation
-# mkdir $ResultPath
-# sentences_path="Intermediate/sentences.txt"
-# full_sentence_path="Intermediate/full_sentences.txt"
-# pos_path="Intermediate/pos.txt"
-# full_pos_path="Intermediate/full_pos.txt"
-# frequent_patterns_path="Intermediate/frequentPatterns.pickle"
-# segmentInput='Intermediate/phrase_segments.txt'
-# cd candidate_generation
-# rm -rf Intermediate
-# mkdir Intermediate
-# python DataPreprocessing/Clean.py $RawText 
-# python FrequentPhraseMining/FrequentPatternMining.py $segmentInput $maxLength $minSup 
-# python EntityExtraction/EntityRelation.py $sentences_path $full_sentence_path $pos_path $full_pos_path $frequent_patterns_path $significance $SegmentOutFile $capitalize
-# cd ..
+mkdir $ResultPath
+sentences_path="Intermediate/sentences.txt"
+full_sentence_path="Intermediate/full_sentences.txt"
+pos_path="Intermediate/pos.txt"
+full_pos_path="Intermediate/full_pos.txt"
+frequent_patterns_path="Intermediate/frequentPatterns.pickle"
+segmentInput='Intermediate/phrase_segments.txt'
+cd candidate_generation
+rm -rf Intermediate
+mkdir Intermediate
+python DataPreprocessing/Clean.py $RawText 
+python FrequentPhraseMining/FrequentPatternMining.py $segmentInput $maxLength $minSup 
+python EntityExtraction/EntityRelation.py $sentences_path $full_sentence_path $pos_path $full_pos_path $frequent_patterns_path $significance $SegmentOutFile $capitalize
+cd ..
 
 
 ### Entity Linking (uncomment to run the entity linking via DBpediaSpotlight)
@@ -44,6 +44,6 @@ NumRelationPhraseClusters='500' # number of relation phrase clusters
 
 
 ### Typing
-# python src/step0-graph_construction.py $SegmentOutFile $DataStatsFile
+python src/step0-graph_construction.py $SegmentOutFile $DataStatsFile
 python src/step1-entity_recognition.py $SegmentOutFile $SeedFile $TypeFile $NumRelationPhraseClusters $ResultFile $ResultFileInText
 
