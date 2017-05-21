@@ -45,17 +45,20 @@ RawText='data/yelp/yelp_sample50k.txt'
 ```
 - format: "docId \TAB document \n"
 
+
 Input: type mapping file path.
 ```
 TypeFile='data/yelp/type_tid.txt'
 ```
 - format: "type name \TAB typeId \n". "NIL" means "Not-of-Interest"
 
+
 Input: mapping between Freebase and DBpedia entities. 
 ```
 FreebaseMap='data/freebase_links.nt'
 ```
 - Download [Freebase-to-DBpedia mapping file](https://drive.google.com/open?id=0Bw2KHcvHhx-gQ2RJVVJLSHJGYlk). Place it under "data/" directory
+
 
 Output: output file from candidate generation (format: "docId \TAB segmented sentence \n").
 ```
@@ -70,6 +73,7 @@ SeedFile='result/yelp/seed_yelp.txt'
 ```
 - Format: "docId \TAB entity name \TAB Original Freebase Type \TAB Refined Type \TAB Freebase EntityID \TAB Similarity Score \TAB Relative Rank \n". 
 - NOTE: Our entity linking module calls [DBpediaSpotLight Web service](https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Web-service), which has limited querying speed. This process can be largely accelarated by installing the tool on your local machine [Link](https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Installation).
+
 
 Output: entity mentions found in each document.
 ```
