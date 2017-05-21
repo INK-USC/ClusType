@@ -21,7 +21,7 @@ ClusType works on coarse-grained entity types (e.g., Person, Location, Organizat
 
 ## System Output & Evaluation
 
-The system output on NYT dataset can be downloaded from [here](https://www.dropbox.com/s/s1cqym4qmub3jkt/results.txt?dl=0). We evaluated the result over ~1k (20,874 annotated entity mentions) [gold standard set](https://www.dropbox.com/s/n46gr1aented5n1/gt_nyt.txt?dl=0). 
+The system output on NYT dataset can be downloaded from [here](https://www.dropbox.com/s/s1cqym4qmub3jkt/results.txt?dl=0). We evaluated the result over ~1k (20,874 annotated entity mentions) [gold standard set](https://www.dropbox.com/s/n46gr1aented5n1/gt_nyt.txt?dl=0). Sample output on 50k Yelp reviews can be download from [here](https://www.dropbox.com/s/opzbmth7kq6qe0c/results.txt?dl=0). 
 
 Evaluate the result:
 ```
