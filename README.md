@@ -119,7 +119,7 @@ minSup='30'
 
 Number of relation phrase clusters.
 ```
-NumRelationPhraseClusters='50'
+NumRelationPhraseClusters='1000'
 ```
 
 
