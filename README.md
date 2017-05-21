@@ -4,6 +4,7 @@ Source code for SIGKDD'15 paper *[ClusType: Effective Entity Recognition and Typ
 
 Given a *text corpus* (e.g., a collection of news articles), it performs automatically [entity extraction and typing](https://en.wikipedia.org/wiki/Named-entity_recognition) using [distant supervision](http://deepdive.stanford.edu/distant_supervision) (i.e., examples from external knowledge bases like Freebase). For example, from the sentence "`The best BBQ I’ve tasted in Phoenix `" the system will recognize `BBQ` as *food* and `phoenix` as *location*. More background can be found in our [WWW'16 tutorial](http://web.engr.illinois.edu/~elkishk2/www2016/).
 
+ClusType works on coarse-grained entity types (e.g., Person, Location, Organization); for more fine-grained entity typing, please use [AFET](https://github.com/shanzhenren/AFET).
 
 ## Data
 
