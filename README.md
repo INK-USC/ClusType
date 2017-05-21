@@ -2,7 +2,7 @@
 
 Source code for SIGKDD'15 paper *[ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering](http://web.engr.illinois.edu/~xren7/fp611-ren.pdf)* ([Slides](http://web.engr.illinois.edu/~xren7/KDD15-ClusType_v3.pdf)). 
 
-Given a *text corpus* (e.g., a collection of news articles), it performs automatically [entity extraction and typing]() using [distant supervision](http://deepdive.stanford.edu/distant_supervision) (i.e., examples from external knowledge bases like Freebase). For example, from the sentence "`The best BBQ I’ve tasted in Phoenix `" the system will recognize `BBQ` as *food* and `phoenix` as *location*. More background can be found in our [WWW'16 tutorial](http://web.engr.illinois.edu/~elkishk2/www2016/).
+Given a *text corpus* (e.g., a collection of news articles), it performs automatically [entity extraction and typing](https://en.wikipedia.org/wiki/Named-entity_recognition) using [distant supervision](http://deepdive.stanford.edu/distant_supervision) (i.e., examples from external knowledge bases like Freebase). For example, from the sentence "`The best BBQ I’ve tasted in Phoenix `" the system will recognize `BBQ` as *food* and `phoenix` as *location*. More background can be found in our [WWW'16 tutorial](http://web.engr.illinois.edu/~elkishk2/www2016/).
 
 
 ## Data
