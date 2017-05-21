@@ -10,7 +10,7 @@ ClusType works on coarse-grained entity types (e.g., Person, Location, Organizat
 
 - NYT:
   - Corpus: 110k New York Times news articles ([download](https://www.dropbox.com/s/y20wv7xmfgcjx65/nyt13_110k.txt?dl=0))
-  - Seed entities: entity linking result by DBpediaSpotlight ([download](https://www.dropbox.com/s/n46gr1aented5n1/gt_nyt.txt?dl=0))  
+  - Seed entities: entity linking result by DBpediaSpotlight ([download](https://www.dropbox.com/s/k0qzsvbbpngptjt/seed_nyt.txt?dl=0))  
 - Yelp:
   - Corpus: 230k Yelp reviews sampled from [Yelp Dataset](https://www.yelp.com/dataset_challenge) ([download](https://www.dropbox.com/s/nqouxgqmz2fdemy/yelp_230k.txt?dl=0))
   - Seed entities: entity linking result by DBpediaSpotlight ([download](https://www.dropbox.com/s/w628rwpb3kbmuea/seed_yelp.txt?dl=0))
