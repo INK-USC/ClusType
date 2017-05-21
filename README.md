@@ -69,7 +69,7 @@ SegmentOutFile='result/segment.txt'
 - Segments are separated by ",". Entity mention candidates are marked with ":EP". Relation phrases are marked with ":RP".
 
 
-Output: entity linking result.
+Output: entity linking result (please download the corresponding seed entity files).
 ```
 SeedFile='result/yelp/seed_yelp.txt'
 ```
