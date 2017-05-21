@@ -50,7 +50,7 @@ def set_Y(train_mid, seedMention_tid_score, mid_mention, size_row, size_col):
 
     ### random sample NIL examples
     # neg_size = num_NIL
-    neg_size = min(num_NIL, num_target)
+    neg_size = min(num_NIL, 5*num_target)
     # neg_size = int(min(num_NIL, num_target/(size_col-1.0)))
 
     neg_example = rn.sample(NIL_set, neg_size)
@@ -63,7 +63,7 @@ def set_Y(train_mid, seedMention_tid_score, mid_mention, size_row, size_col):
     
     # print Y.nnz, '#ground truth mentions in Y'
     print 'Percent Seeded Mention:', (Y.nnz+0.0)/len(mid_mention) * 100, '% of', len(mid_mention), \
-    ', #target/All = ', num_target/(Y.nnz) * 100
+    ', #target/All = ', num_target/(Y.nnz+0.0) * 100
     
     return Y
 
@@ -110,7 +110,7 @@ def inverse_matrix(X):
     return X
 
 
-def clustype_noClus(S_L, S_R, S_M, PiC, PiL, PiR, Y0, lambda_O, gamma, mu, T, ITER):
+def clustype_appx(S_L, S_R, S_M, PiC, PiL, PiR, Y0, lambda_O, gamma, mu, T, ITER, K):
     PiLL = PiL.T*PiL
     PiRR = PiR.T*PiR
 

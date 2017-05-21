@@ -1,0 +1,8 @@
+/time/event	0
+/location/location	1
+/people/person	2
+/organization/organization	3
+/business/consumer_product	4
+/business/job_title	5
+/time/day_of_year	6
+NIL	7

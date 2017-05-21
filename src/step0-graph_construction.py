@@ -9,7 +9,7 @@ import os
 ### Parameters #############################################################
 CANDIDATE_MINSUP = 1 # min_sup of mentions for each candidate -->  =1 leads to 91% fuzzy Recall
 RP_CONTEXT_WINDOW_SIZE = 2 # context windows size for F_context
-K_SM = 5 # number of nearest neighbors in S_M
+K_SM = 1 # number of nearest neighbors in S_M
 
 ### Input #############################################################
 if not os.path.exists('tmp'):
@@ -18,12 +18,12 @@ if not os.path.exists('result'):
     os.makedirs('result')
 
 corpus_path = sys.argv[1] # 'result/segment.txt'
-stop_path =  sys.argv[2] #'data/stopwords.txt'
+stop_path =  'data/stopwords.txt'
 with open(stop_path) as f:
 	stoplist = set([line.strip() for line in f])
 entity_stoplist = stoplist
 
-stat_path = sys.argv[3]
+stat_path = sys.argv[2]
 fff = open(stat_path, 'w')
 fff.write('CANDIDATE_MINSUP='+str(CANDIDATE_MINSUP)+', RP_CONTEXT_WINDOW_SIZE='+str(RP_CONTEXT_WINDOW_SIZE)+', K_SM='+str(K_SM)+'\n')
 
