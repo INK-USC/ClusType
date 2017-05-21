@@ -44,7 +44,7 @@ We take Yelp dataset as an example.
 
 Input: text corpus path.
 ```
-RawText='data/yelp/yelp_sample50k.txt'
+RawText='data/yelp/yelp_230k.txt'
 ```
 - format: "docId \TAB document \n"
 
