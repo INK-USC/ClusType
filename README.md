@@ -77,7 +77,7 @@ SegmentOutFile='result/segment.txt'
 
 Output: entity linking result (please download the corresponding seed entity files).
 ```
-SeedFile='result/yelp/seed_yelp.txt'
+SeedFile='data/yelp/seed_yelp.txt'
 ```
 - Format: "docId \TAB entity name \TAB Original Freebase Type \TAB Refined Type \TAB Freebase EntityID \TAB Similarity Score \TAB Relative Rank \n". 
 - NOTE: Our entity linking module calls [DBpediaSpotLight Web service](https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Web-service), which has limited querying speed. This process can be largely accelarated by installing the tool on your local machine [Link](https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Installation).
