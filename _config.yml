@@ -2,7 +2,7 @@ title: ClusType
 description: An Open Tool for Automatic Entity Recognition and Typing for Massive, Domain-Specific Corpora
 google_analytics: UA-34679733-2
 show_downloads: true
-theme: jekyll-theme-cayman
+theme: jekyll-theme-slate
 
 gems:
   - jekyll-mentions
